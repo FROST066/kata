@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kata/screens/signIn.dart';
 import '../utils/constant.dart';
 
 class SpalshScreen extends StatefulWidget {
@@ -9,6 +10,15 @@ class SpalshScreen extends StatefulWidget {
 }
 
 class _SpalshScreenState extends State<SpalshScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const SignIn()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
